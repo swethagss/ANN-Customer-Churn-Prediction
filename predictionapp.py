@@ -62,7 +62,13 @@ input_data = pd.DataFrame({
 
 # One hot encode 'geography'
 geo_encoded = onehot_encoder_geo.transform([[geography]]).toarray()
-geo_encoded_df = pd.DataFrame(geo_encoded, columns=onehot_encoder_geo.get_feature_names_out(['Geography']))
+# geo_encoded_df = pd.DataFrame(geo_encoded, columns=onehot_encoder_geo.get_feature_names_out(['Geography']))
+
+try:
+    geo_encoded_df = pd.DataFrame(geo_encoded, columns=onehot_encoder_geo.get_feature_names_out(['Geography']))
+except AttributeError:
+    # Fallback for mismatched versions
+    geo_encoded_df = pd.DataFrame(geo_encoded, columns=onehot_encoder_geo.categories_[0])
 
 # Combine one-hot encoded columns with input data
 input_data = pd.concat([input_data.reset_index(drop=True), geo_encoded_df], axis=1)
