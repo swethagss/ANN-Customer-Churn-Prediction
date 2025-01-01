@@ -113,6 +113,7 @@ Achieved an **accuracy of 85.95%** with the ANN model, demonstrating its capabil
 
 Deploy the model using a Streamlit app (predictonapp.py). the app allows users to input customer data and get churn predictions.
 
+https://github.com/user-attachments/assets/fedf4fd1-2268-4bea-9758-b1311e0fc89a
 
 ---
 ## Challenges and Solutions 
