@@ -89,6 +89,13 @@ To set up TensorBoard, follow these steps:
      ```
      %tensorboard --logdir=logs/fit
      ```
+The trained model is saved as model.h5
+
+<img width="876" alt="Screenshot 2024-12-31 at 9 52 12 PM" src="https://github.com/user-attachments/assets/23201aa3-5892-4400-88ff-624e7b43c90c" />
+<img width="882" alt="Screenshot 2024-12-31 at 9 52 42 PM" src="https://github.com/user-attachments/assets/6e41ac39-3b37-4309-ba35-24b85d08727f" />
+<img width="877" alt="Screenshot 2024-12-31 at 9 52 56 PM" src="https://github.com/user-attachments/assets/9d888ace-64b4-4946-9e9b-c93fcb51d0ef" />
+
+### Model Evaluation
 
 
 
