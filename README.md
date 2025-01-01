@@ -40,7 +40,7 @@ This project demonstrates the creation of an ANN model for binary classification
 ---
 
 ## Methodology
-
+---
 ### Data Collection
 
 - Gather the data required for the project. The specified dataset contains information about customers, including features like credit score, geography, gender, age, tenure, balance, and more.
@@ -96,6 +96,56 @@ The trained model is saved as model.h5
 <img width="877" alt="Screenshot 2024-12-31 at 9 52 56 PM" src="https://github.com/user-attachments/assets/9d888ace-64b4-4946-9e9b-c93fcb51d0ef" />
 
 ### Model Evaluation
+
+Evaluate the trained model using the testing set. Calculate metrics such as accuracy, precision, recall and F1 Score. Generate a confusion matrix and a classification report to assess the model's performance.
+
+<img width="502" alt="Screenshot 2025-01-01 at 7 50 10 PM" src="https://github.com/user-attachments/assets/7475b125-b459-49d6-9250-1269cdb153ac" />
+
+### Model Prediction
+
+Use the prediction.ipynb notebook to demonstarte how to use the trained model for predicting customer churn on new data. Load the pre-trained model and apply it to new datasets to generate predictions
+
+## Results  
+
+Achieved an **accuracy of 85.95%** with the ANN model, demonstrating its capability to predict customer churn effectively.  
+
+## Deployment
+
+Deploy the model using a Streamlit app (predictonapp.py). the app allows users to input customer data and get churn predictions.
+
+
+---
+## Challenges and Solutions 
+
+### Mixed Data Types
+- Used label encoding for 'Gender' and one-hot encoding for 'Geography'
+- Normalized numeric columns to bring them onto the same scale.  
+
+### Class Imbalance
+- Models generally perform poorly on imbalanced classes. Over-sampling could be used to duplicate minority class examples.
+- Using accuracy alone as a metric would mask poor minority class prediction. Confusion matrix helps identify true/false positives and negatives.
+
+### Model Optimization
+- Started with a simple 2 hidden layer network, gradually adjusted the number of units, activations, dropouts etc
+- Tried additional convolutional/LSTM layers since sequence/images were unavailable
+- Used callback functions like EarlyStopping to prevent overfitting
+- Permutation feature importance helped identity impactful predictors
+
+### prediction Interpretation
+- Studied relationships between feature and targets via visulaization
+- Identified customer profiles most/least likely to churn based on predictions.
+- Used model to simulate retention programs - if changes are made profile is unlikely to churn
+
+
+
+
+
+
+
+
+
+
+
 
 
 
